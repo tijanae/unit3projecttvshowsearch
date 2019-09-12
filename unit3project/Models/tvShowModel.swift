@@ -9,8 +9,9 @@
 import Foundation
 
 struct TvShows: Codable{
-    let score: Double
+   
     let show: ShowInfo
+    
 }
 
 
@@ -18,21 +19,25 @@ struct TvShows: Codable{
 struct ShowInfo: Codable {
     let id: Int
     let name: String
-//    private let genres: [GenreType]
-    let runtime: Int
-    let premiered: String
-    let rating: AverageInfo
+    let rating: AverageInfo?
+    let image: ImageJPEG
 }
+
+struct ImageJPEG: Codable {
+    let medium: String
+    let original: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case medium = "medium"
+        case original = "original"
+    }
+}
+
 
 struct AverageInfo: Codable{
-    let average: Double
+    let average: Double?
 }
 
-struct GenreType: Codable {
-    let drama: String
-    let scienceFiction: String
-    let thriller: String
-}
 
 
 /*

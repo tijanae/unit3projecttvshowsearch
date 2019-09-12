@@ -10,14 +10,22 @@ import UIKit
 
 class ShowDetailTableViewController: UITableViewController {
 
+    var tvShowDetails: TvShows!
+    
+    var episodeArr: [EpisodeDetails]
+    
+    @IBOutlet var tvShowDetailTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("Unexpected Error: No identifier in segue")
+        }
     }
 
     // MARK: - Table view data source

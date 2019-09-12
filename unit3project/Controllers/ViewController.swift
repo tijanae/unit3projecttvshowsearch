@@ -25,7 +25,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     
     var tvSearchString: String? = nil {
         didSet{
-            self.loadData()
+            tvShowTableView.reloadData()
         }
     }
     
@@ -36,7 +36,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         guard searchedString != "" else{
             return tvShows
         }
-        return tvShows.filter{$0.show.name.lowercased().contains(searchedString.lowercased())}
+        return tvShows
     }
     
     
@@ -47,6 +47,8 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         super.viewDidLoad()
         tvShowTableView.delegate = self
         tvShowTableView.dataSource = self
+        tvShowSearchBar.delegate = self
+        print(tvShows)
         loadData()
         // Do any additional setup after loading the view.
     }
@@ -64,10 +66,33 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
                 }
             }
             }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("Unexpected Error: No Identifier in segue")
+        }
+        switch segueIdentifier {
+        case "showMainToShowEpisodeSegue":
+            guard let tvDetailsVC = segue.destination as? ShowDetailTableViewController else{
+                fatalError("Unexpected Error: No View Controller")
+            }
+            guard let selectedIndexPath = self.tvShowTableView.indexPathForSelectedRow else {
+                fatalError("Unexpected Error: No row selected")
+            }
+            tvDetailsVC.tvShowDetails = userRequestedSearch[selectedIndexPath.row]
+            
+        default:
+            fatalError("Unexpected Identifier")
+        }
+    }
+    
+    
+    
+    
 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 250
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,8 +103,28 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         let tvInfo = userRequestedSearch[indexPath.row]
         let tvCell = tvShowTableView.dequeueReusableCell(withIdentifier: "tvShowCell", for: indexPath) as! ShowTableViewCell
         tvCell.tvShowName.text = tvInfo.show.name.capitalized
-        tvCell.tvShowRating.text = "Rating: \(tvInfo.show.rating)"
+        if let rating = tvInfo.show.rating?.average {
+            tvCell.tvShowRating.text = "Rating: \(rating)"
+        } else {
+           tvCell.tvShowRating.text = "Rating Pending"
+        }
+        
+        ImageHelper.shared.getImage(urlStr: tvInfo.show.image.medium) {(result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromOnline):
+                    tvCell.tvShowImage.image = imageFromOnline
+                }
+            }
+        }
         return tvCell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tvSearchString = searchBar.text
+        loadData()
     }
 
 }

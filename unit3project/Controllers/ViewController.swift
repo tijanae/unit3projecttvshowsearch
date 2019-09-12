@@ -79,6 +79,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
             guard let selectedIndexPath = self.tvShowTableView.indexPathForSelectedRow else {
                 fatalError("Unexpected Error: No row selected")
             }
+            EpisodeAPIManager.shared.getEpisodes(showId: [EpisodeDetails], completionHandler: <#T##(Result<[EpisodeInfo], Error>) -> Void#>)
             tvDetailsVC.tvShowDetails = userRequestedSearch[selectedIndexPath.row]
             
         default:

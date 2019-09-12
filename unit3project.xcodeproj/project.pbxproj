@@ -21,7 +21,7 @@
 		4E6FFBBC23299664003E7822 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBBB23299664003E7822 /* EpisodeViewController.swift */; };
 		4E6FFBBF2329A354003E7822 /* ShowAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */; };
 		4E6FFBC12329A366003E7822 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBC02329A366003E7822 /* ImageHelper.swift */; };
-		4E6FFBC7232AD108003E7822 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBC6232AD108003E7822 /* NetworkManager.swift */; };
+		4E6FFBCA232AF29F003E7822 /* EpisodeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBC9232AF29F003E7822 /* EpisodeApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		4E6FFBBB23299664003E7822 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPIManager.swift; sourceTree = "<group>"; };
 		4E6FFBC02329A366003E7822 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
-		4E6FFBC6232AD108003E7822 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4E6FFBC9232AF29F003E7822 /* EpisodeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +97,6 @@
 			children = (
 				4E6FFB9123298F9A003E7822 /* Main.storyboard */,
 				4E6FFBC8232AD131003E7822 /* NetworkInfo */,
-				4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */,
 				4E6FFBB4232991AD003E7822 /* Models */,
 				4E6FFBB32329918E003E7822 /* Controllers */,
 				4E6FFBBD23299687003E7822 /* tableViewCells */,
@@ -150,7 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				4E6FFBC02329A366003E7822 /* ImageHelper.swift */,
-				4E6FFBC6232AD108003E7822 /* NetworkManager.swift */,
+				4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */,
+				4E6FFBC9232AF29F003E7822 /* EpisodeApiManager.swift */,
 			);
 			path = NetworkInfo;
 			sourceTree = "<group>";
@@ -260,13 +260,13 @@
 				4E6FFBC12329A366003E7822 /* ImageHelper.swift in Sources */,
 				4E6FFBB02329912C003E7822 /* ShowTableViewCell.swift in Sources */,
 				4E6FFB9023298F9A003E7822 /* ViewController.swift in Sources */,
-				4E6FFBC7232AD108003E7822 /* NetworkManager.swift in Sources */,
 				4E6FFBB6232991DF003E7822 /* tvShowModel.swift in Sources */,
 				4E6FFB8E23298F9A003E7822 /* AppDelegate.swift in Sources */,
 				4E6FFBBA23299618003E7822 /* ShowDetailTableViewController.swift in Sources */,
 				4E6FFBBC23299664003E7822 /* EpisodeViewController.swift in Sources */,
 				4E6FFBB8232991F8003E7822 /* episodeModel.swift in Sources */,
 				4E6FFBBF2329A354003E7822 /* ShowAPIManager.swift in Sources */,
+				4E6FFBCA232AF29F003E7822 /* EpisodeApiManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

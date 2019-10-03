@@ -72,15 +72,14 @@ class ViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate
             fatalError("Unexpected Error: No Identifier in segue")
         }
         switch segueIdentifier {
-        case "showMainToShowEpisodeSegue":
-            guard let tvDetailsVC = segue.destination as? ShowDetailTableViewController else{
+        case "showSearchToShowDetailSegue":
+            guard let tvDetailsVC = segue.destination as? ShowViewController else{
                 fatalError("Unexpected Error: No View Controller")
             }
             guard let selectedIndexPath = self.tvShowTableView.indexPathForSelectedRow else {
                 fatalError("Unexpected Error: No row selected")
             }
-            EpisodeAPIManager.shared.getEpisodes(showId: [EpisodeDetails], completionHandler: <#T##(Result<[EpisodeInfo], Error>) -> Void#>)
-            tvDetailsVC.tvShowDetails = userRequestedSearch[selectedIndexPath.row]
+            tvDetailsVC.tvShowId = userRequestedSearch[selectedIndexPath.row].show.id
             
         default:
             fatalError("Unexpected Identifier")

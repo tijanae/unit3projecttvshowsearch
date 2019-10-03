@@ -16,8 +16,8 @@ class EpisodeAPIManager{
     
     
     
-    func getEpisodes(showId: Int, completionHandler: @escaping (Result<[EpisodeInfo], Error>) -> Void) {
-        let urlStr = "http://api.tvmaze.com/shows/\()?embed=episodes"
+    func getEpisodes(showId: Int, completionHandler: @escaping (Result<[Episode], Error>) -> Void) {
+        let urlStr = "http://api.tvmaze.com/shows/\(showId)?embed=episodes"
         
         guard let url = URL(string: urlStr) else{
             completionHandler(.failure(ErrorHandling.badURL))
@@ -33,10 +33,11 @@ class EpisodeAPIManager{
                 return
             }
             do{
-            let episodeData = try JSONDecoder().decode(<#T##type: Decodable.Protocol##Decodable.Protocol#>, from: data)
-                completionHandler(.success(<#T##Success#>))
-            }catch {
+            let episodeData = try JSONDecoder().decode(ShowDetails.self, from: data)
+                completionHandler(.success(episodeData.episodeList.episodes))
+            }catch let error {
                 completionHandler(.failure(ErrorHandling.decodingError))
+                print(error)
             }
         }.resume()
     }

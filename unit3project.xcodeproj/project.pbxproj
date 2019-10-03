@@ -17,11 +17,11 @@
 		4E6FFBB223299180003E7822 /* ShowDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBB123299180003E7822 /* ShowDetailTableViewCell.swift */; };
 		4E6FFBB6232991DF003E7822 /* tvShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBB5232991DF003E7822 /* tvShowModel.swift */; };
 		4E6FFBB8232991F8003E7822 /* episodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBB7232991F8003E7822 /* episodeModel.swift */; };
-		4E6FFBBA23299618003E7822 /* ShowDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBB923299618003E7822 /* ShowDetailTableViewController.swift */; };
 		4E6FFBBC23299664003E7822 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBBB23299664003E7822 /* EpisodeViewController.swift */; };
 		4E6FFBBF2329A354003E7822 /* ShowAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */; };
 		4E6FFBC12329A366003E7822 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBC02329A366003E7822 /* ImageHelper.swift */; };
 		4E6FFBCA232AF29F003E7822 /* EpisodeApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6FFBC9232AF29F003E7822 /* EpisodeApiManager.swift */; };
+		4EC4DD9A2346A19F00E2F3A5 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC4DD992346A19F00E2F3A5 /* ShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +49,11 @@
 		4E6FFBB123299180003E7822 /* ShowDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewCell.swift; sourceTree = "<group>"; };
 		4E6FFBB5232991DF003E7822 /* tvShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvShowModel.swift; sourceTree = "<group>"; };
 		4E6FFBB7232991F8003E7822 /* episodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = episodeModel.swift; sourceTree = "<group>"; };
-		4E6FFBB923299618003E7822 /* ShowDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailTableViewController.swift; sourceTree = "<group>"; };
 		4E6FFBBB23299664003E7822 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		4E6FFBBE2329A354003E7822 /* ShowAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAPIManager.swift; sourceTree = "<group>"; };
 		4E6FFBC02329A366003E7822 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		4E6FFBC9232AF29F003E7822 /* EpisodeApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeApiManager.swift; sourceTree = "<group>"; };
+		4EC4DD992346A19F00E2F3A5 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				4E6FFB8F23298F9A003E7822 /* ViewController.swift */,
-				4E6FFBB923299618003E7822 /* ShowDetailTableViewController.swift */,
+				4EC4DD992346A19F00E2F3A5 /* ShowViewController.swift */,
 				4E6FFBBB23299664003E7822 /* EpisodeViewController.swift */,
 			);
 			path = Controllers;
@@ -262,11 +262,11 @@
 				4E6FFB9023298F9A003E7822 /* ViewController.swift in Sources */,
 				4E6FFBB6232991DF003E7822 /* tvShowModel.swift in Sources */,
 				4E6FFB8E23298F9A003E7822 /* AppDelegate.swift in Sources */,
-				4E6FFBBA23299618003E7822 /* ShowDetailTableViewController.swift in Sources */,
 				4E6FFBBC23299664003E7822 /* EpisodeViewController.swift in Sources */,
 				4E6FFBB8232991F8003E7822 /* episodeModel.swift in Sources */,
 				4E6FFBBF2329A354003E7822 /* ShowAPIManager.swift in Sources */,
 				4E6FFBCA232AF29F003E7822 /* EpisodeApiManager.swift in Sources */,
+				4EC4DD9A2346A19F00E2F3A5 /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

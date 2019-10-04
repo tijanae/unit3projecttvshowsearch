@@ -50,6 +50,26 @@ class ShowViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier else{
+            fatalError("Unexpected Error: No Identifier in segue")
+        }
+        switch segueIdentifier {
+        case "ShowDetailToEpisodeDetail":
+            guard let episodeDetailsVC = segue.destination as? EpisodeViewController else{
+                fatalError("Unexpected Error: No View Controller")
+            }
+            guard let selectedIndexPath = self.showEpisodeTableView.indexPathForSelectedRow else {
+                fatalError("Unexpected Error: No row selected")
+            }
+            episodeDetailsVC.episodeDetails = episodeArr[selectedIndexPath.row]
+                
+            
+        default:
+            fatalError("Unexpected Identifier")
+        }
+    }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        // #warning Incomplete implementation, return the number of rows

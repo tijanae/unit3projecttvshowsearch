@@ -10,11 +10,31 @@ import UIKit
 
 class EpisodeViewController: UIViewController {
 
+    
+    var episodeDetails: Episode!
+    
+    @IBOutlet weak var episodeImage: UIImageView!
+    
+    @IBOutlet weak var episodeName: UILabel!
+    
+    @IBOutlet weak var episodeSeason: UILabel!
+    
+    @IBOutlet weak var episodeNumber: UILabel!
+    
+    @IBOutlet weak var episodeSummary: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        episodeName.text = episodeDetails.name.capitalized
+        episodeSeason.text = "Season: \(episodeDetails.season)"
+        episodeNumber.text = "Number: \(episodeDetails.number)"
+        episodeSummary.text = episodeDetails.summary
+//        need to return uiImage
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     /*

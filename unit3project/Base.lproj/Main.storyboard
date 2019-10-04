@@ -160,7 +160,7 @@
         <!--Episode View Controller-->
         <scene sceneID="bJg-ro-1qe">
             <objects>
-                <viewController id="6gf-HH-b7I" userLabel="Episode View Controller" customClass="UITableViewController" sceneMemberID="viewController">
+                <viewController id="6gf-HH-b7I" userLabel="Episode View Controller" customClass="EpisodeViewController" customModule="unit3project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3uR-JI-4Mt" customClass="EpisodeDetailTableViewCell" customModule="unit3project" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,21 +170,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnT-cS-7VP">
-                                <rect key="frame" x="62" y="338" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-aP-lYU">
-                                <rect key="frame" x="62" y="377" width="42" height="21"/>
+                                <rect key="frame" x="62" y="338" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJr-cz-UkD">
-                                <rect key="frame" x="62" y="406" width="42" height="21"/>
+                                <rect key="frame" x="62" y="414" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -198,11 +191,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-aP-lYU">
+                                <rect key="frame" x="62" y="376" width="290" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="QAM-Nw-WVK"/>
                     </view>
                     <navigationItem key="navigationItem" id="Noy-a4-Qds"/>
+                    <connections>
+                        <outlet property="episodeImage" destination="dMm-ey-Zlx" id="qUm-k6-HIi"/>
+                        <outlet property="episodeName" destination="KnT-cS-7VP" id="0MS-Zo-DXB"/>
+                        <outlet property="episodeNumber" destination="fJr-cz-UkD" id="XMq-95-Gp6"/>
+                        <outlet property="episodeSeason" destination="rxf-aP-lYU" id="ghI-ya-BEg"/>
+                        <outlet property="episodeSummary" destination="6wy-Na-8cV" id="pah-hf-ztM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpT-JG-ro6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

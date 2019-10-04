@@ -34,7 +34,11 @@ struct Episode: Codable {
     let number: Int?
     let airdate: String?
     let summary: String?
-    let image: EpisodeImage
+    let image: EpisodeImage?
+    var updatedSummary: String {
+        let i = (summary?.replacingOccurrences(of: "<p>", with: ""))
+        return i?.replacingOccurrences(of: "</p>", with: "") ?? ""
+    }
     
     private enum CodingKeys: String, CodingKey {
         case episodeId = "id"

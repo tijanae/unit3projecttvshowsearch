@@ -81,16 +81,17 @@ class ShowViewController: UIViewController, UITableViewDelegate, UITableViewData
        let thisShow = episodeArr[indexPath.row]
        let showCell = showEpisodeTableView.dequeueReusableCell(withIdentifier: "ShowCell", for: indexPath) as! ShowDetailTableViewCell
        showCell.episodeName.text = thisShow.name
-       showCell.episodeDetails.text = " Season: \(thisShow.season) & Episode: \(thisShow.number) "
+       showCell.episodeDetails.text = " Season: \(thisShow.season!) & Episode: \(thisShow.number!) "
 
-        
-        ImageHelper.shared.getImage(urlStr: thisShow.image.medium!) {(result) in
+        if let url = thisShow.image?.medium{
+        ImageHelper.shared.getImage(urlStr: url) {(result) in
             DispatchQueue.main.async {
                 switch result {
                 case .failure(let error):
                     print(error)
                 case .success(let imageFromOnline):
                     showCell.episodeImage.image = imageFromOnline
+                }
                 }
             }
         }

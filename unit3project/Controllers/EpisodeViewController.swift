@@ -25,15 +25,31 @@ class EpisodeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        episodeName.text = episodeDetails.name.capitalized
-        episodeSeason.text = "Season: \(episodeDetails.season)"
-        episodeNumber.text = "Number: \(episodeDetails.number)"
-        episodeSummary.text = episodeDetails.summary
+        loadData()
+        
 //        need to return uiImage
         // Do any additional setup after loading the view.
     }
     
+    func loadData() {
+        episodeName.text = episodeDetails.name.capitalized
+        episodeSeason.text = "Season: \(episodeDetails.season!)"
+        episodeNumber.text = "Number: \(episodeDetails.number!)"
+        episodeSummary.text = episodeDetails.updatedSummary
+        
+        if let url = episodeDetails.image?.original {
+            ImageHelper.shared.getImage(urlStr: url) {(result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let imageFromOnline):
+                        self.episodeImage.image = imageFromOnline
+                    }
+                }
+            }
+        }
+    }
     
     
 
